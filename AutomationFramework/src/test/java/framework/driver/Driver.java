@@ -27,11 +27,6 @@ public class Driver {
             // driver.manage().window().maximize();
 
             driver.get(GetProperties.getProperties("config", "mainUrl"));
-
-//            ResourceBundle rb = ResourceBundle.getBundle("config");
-//            driver.get(rb.getString("mainUrl"));
-
-
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
         return driver;

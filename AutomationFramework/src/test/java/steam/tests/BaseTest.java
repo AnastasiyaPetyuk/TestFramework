@@ -1,14 +1,19 @@
 package steam.tests;
 
 import framework.driver.Driver;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.logging.Logger;
+
 public class BaseTest {
-    protected static final Logger logger = LogManager.getLogger(BaseTest.class);
+
+    public static final Logger logger = Logger.getLogger(BaseTest.class.getName());
+
+
     protected static WebDriver driver;
 
     @BeforeSuite
