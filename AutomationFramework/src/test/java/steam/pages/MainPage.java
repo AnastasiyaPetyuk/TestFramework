@@ -41,43 +41,8 @@ public class MainPage extends BasePage {
         String line = GetProperties.getProperties("categories", s);
 
         expectedString = Stream.of(line.split(",")).collect(Collectors.toList());
-//        System.out.println(actualString);
-//        System.out.println(expectedString);
 
         return expectedString.equals(expectedString);
     }
-
-
-
-
-    /*
-          List<WebElement> elements = driver.findElements(By.cssSelector("//div[@data-genre-group='%s'][contains(@class,'popup_genre_expand_content')]/a"));
-          String partOfURL = "//div[@data-genre-group='%s'][2]/following-sibling::div[1]/a";
-
-
-
-    List<String> textValues = new ArrayList<>();
-
-        for (WebElement element : elements) {
-        String text = element.getText();
-        textValues.add(text);
-          }
-
-        for (String text : textValues) {
-        System.out.println(text);
-          }
-
-    public List<String> method(String s) {
-
-        return getTextFromElements(list);
-
-    }
-    public List<String> getTextFromElements(List<WebElement> list) {
-        return list.stream().map(WebElement::getText).collect(Collectors.toList());
-    }
-    public List<WebElement> getListOfHeaderElements() {
-        return driver.findElements(By.xpath(partOfURL));
-    }
-     */
 
 }

@@ -15,6 +15,8 @@ public class ValidateCategoriesTest extends BaseTest{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         Assert.assertTrue(mainPage.equalsListOfCategories("action"));
+        Assert.assertTrue(mainPage.equalsListOfCategories("rpg"));
+        Assert.assertTrue(mainPage.equalsListOfCategories("strategy"));
     }
 
 }
