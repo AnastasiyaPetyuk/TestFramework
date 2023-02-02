@@ -15,10 +15,6 @@ public class ValidateCategoriesTest extends BaseTest{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         Assert.assertTrue(mainPage.equalsListOfCategories("action"));
-/*
-        assertThat("Title", str, Matchers.equalTo(str2));
-        Assert.assertTrue(str2.equals(str));
-*/
     }
 
 }

@@ -1,5 +1,6 @@
 package framework.driver;
 
+import framework.utils.GetProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,10 +26,10 @@ public class Driver {
             driver = new ChromeDriver(options);
             // driver.manage().window().maximize();
 
-            // driver.get(GetProperties.getProperties("config", "mainUrl"));
+            driver.get(GetProperties.getProperties("config", "mainUrl"));
 
-            ResourceBundle rb = ResourceBundle.getBundle("config");
-            driver.get(rb.getString("mainUrl"));
+//            ResourceBundle rb = ResourceBundle.getBundle("config");
+//            driver.get(rb.getString("mainUrl"));
 
 
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

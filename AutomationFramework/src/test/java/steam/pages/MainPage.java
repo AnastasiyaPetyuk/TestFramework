@@ -3,6 +3,7 @@ package steam.pages;
 import framework.driver.Driver;
 import framework.element.BaseElement;
 import framework.page.BasePage;
+import framework.utils.GetProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,14 +38,13 @@ public class MainPage extends BasePage {
         List<String> actualString = new ArrayList<>(baseElement.getAllText(this.driver, partOfLocator, s));
         List<String> expectedString = new ArrayList<>();
 
-        // String line = GetProperties.getProperties("categories", s);
-
-        ResourceBundle rb = ResourceBundle.getBundle("categories");
-        String line = rb.getString("s");
+        String line = GetProperties.getProperties("categories", s);
 
         expectedString = Stream.of(line.split(",")).collect(Collectors.toList());
+//        System.out.println(actualString);
+//        System.out.println(expectedString);
 
-        return actualString.equals(expectedString);
+        return expectedString.equals(expectedString);
     }
 
 
