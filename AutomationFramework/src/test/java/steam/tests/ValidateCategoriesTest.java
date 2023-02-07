@@ -9,14 +9,15 @@ import java.time.Duration;
 
 
 public class ValidateCategoriesTest extends BaseTest{
-    private MainPage mainPage;
     private MainPageSteps mainPageSteps;
     @Test
     public void validateCategoriesTest() {
-        mainPage = new MainPage();
+        MainPage mainPage = new MainPage();
         mainPage.navigateToCategories();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
+        mainPageSteps = new MainPageSteps();
+        mainPageSteps.waitingOfDisplayedListsOfCategories();
         Assert.assertTrue(mainPageSteps.equalsListOfCategories("action"));
         Assert.assertTrue(mainPageSteps.equalsListOfCategories("rpg"));
         Assert.assertTrue(mainPageSteps.equalsListOfCategories("strategy"));

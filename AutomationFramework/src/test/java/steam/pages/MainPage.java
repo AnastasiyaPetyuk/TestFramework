@@ -1,30 +1,35 @@
 package steam.pages;
 
-import framework.driver.Driver;
-import framework.element.BaseElement;
+import framework.driver.Browser;
 import framework.page.BasePage;
+import framework.pageElements.Button;
+import framework.pageElements.Label;
+import framework.utils.MyWaiters;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import java.time.Duration;
 
 
 public class MainPage extends BasePage {
-    protected static final By locator = By.xpath("//div[contains(@class, 'capsule main_capsule')]");
-    public static WebDriver driver;
-    public static BaseElement baseElement;
+    protected final Label mainPageUniqueLabel = new Label(By.xpath("//div[contains(@class, 'capsule main_capsule')]"));
+    private Button categoriesButton = new Button(By.xpath("//a[contains(text(), 'Categories')]"));
+    private final Button newAndNoteworthyButton = new Button(By.xpath("//a[contains(text(), 'New & Noteworthy')]"));
+    private final Button specialOffersButton = new Button(By.xpath("//a[contains(text(), 'Special Offers')]"));
 
     public MainPage() {
-        super(locator);
-        this.driver = Driver.setupDriver();
+        uniqueElement = mainPageUniqueLabel;
     }
 
     public void navigateToCategories() {
-        WebElement categories = driver.findElement(By.xpath("//a[contains(text(), 'Categories')]"));
+        categoriesButton.moveCursorToElement();
 
-        baseElement = new BaseElement(categories);
-        baseElement.moveCursorToElement(driver);
     }
+    public void navigateToNewAndNoteworthy() {
+        newAndNoteworthyButton.moveCursorToElement();
+        Browser.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 
-
-
+    }
+    public void clickToSpecialOffers() {
+        specialOffersButton.click();
+    }
 }

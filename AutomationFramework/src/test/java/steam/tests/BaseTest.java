@@ -1,6 +1,6 @@
 package steam.tests;
 
-import framework.driver.Driver;
+import framework.driver.Browser;
 
 
 import org.openqa.selenium.WebDriver;
@@ -19,12 +19,12 @@ public class BaseTest {
     @BeforeSuite
     public void setUpDriver() {
         logger.info("set up driver");
-        driver = Driver.setupDriver();
+        driver = Browser.setupDriver();
     }
 
     @AfterSuite
     public void closeDriver() {
         logger.info("close driver");
-        Driver.closeDriver();
+        Browser.closeDriver();
     }
 }
