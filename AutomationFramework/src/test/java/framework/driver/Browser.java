@@ -7,21 +7,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
-import java.util.ResourceBundle;
 
-public class Driver {
+public class Browser {
     private static WebDriver driver;
 
-    private Driver() {
-
+    private Browser() {
     }
 
     public static WebDriver setupDriver() {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            // options.addArguments("--headless");
-            options.addArguments("start-maximized");
+           //  options.addArguments("--headless");
+            options.addArguments("--window-size=1920,1200");
             options.addArguments("--lang=en");
             driver = new ChromeDriver(options);
             // driver.manage().window().maximize();
@@ -29,6 +27,10 @@ public class Driver {
             driver.get(GetProperties.getProperties("config", "mainUrl"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
+        return driver;
+    }
+
+    public static WebDriver getDriver() {
         return driver;
     }
 
