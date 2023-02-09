@@ -31,25 +31,4 @@ public class MyWaiters {
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
     }
-
-    /*
-    public WebElement fluentWaitVisibilityOfElement(WebElement element){
-        Wait<WebDriver> wait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofSeconds(2))
-                .ignoring(NoSuchElementException.class);
-        return wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    public WebElement fluentWaitElementToBeClickable(WebElement element){
-        Wait<WebDriver> wait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofSeconds(2))
-                .ignoring(NoSuchElementException.class)
-                .ignoring(TimeoutException.class);
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-*/
-
-
 }
