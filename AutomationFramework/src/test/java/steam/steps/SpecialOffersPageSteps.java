@@ -1,18 +1,14 @@
 package steam.steps;
 
-import framework.driver.Browser;
 import framework.pageElements.ListOfElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 public class SpecialOffersPageSteps {
     public static final Logger logger = Logger.getLogger(MainPageSteps.class.getName());
-    //private final By locatorOfGameSection = By.xpath("//div[contains(@class,'salepreviewwidgets_StoreSaleWidgetRight')]");
     private final ListOfElements<WebElement> listOfGameSale = new ListOfElements<>(By.xpath("//div[contains(@class,'salepreviewwidgets_StoreSaleWidgetRight')]//div[contains(@class, \"StoreSaleDiscountBox\")]"));
     private final ListOfElements<WebElement> listOfStartedPrice = new ListOfElements<>(By.xpath("//div[contains(@class,'salepreviewwidgets_StoreSaleWidgetRight')]//div[contains(@class, \"StoreOriginalPrice\")]"));
     private final ListOfElements<WebElement> listOfCurrentPrice = new ListOfElements<>(By.xpath("//div[contains(@class,'salepreviewwidgets_StoreSaleWidgetRight')]//div[contains(@class, \"StoreSalePriceBox\")]"));

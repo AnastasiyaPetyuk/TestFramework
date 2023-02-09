@@ -18,12 +18,10 @@ public class Browser {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-           //  options.addArguments("--headless");
+            //  options.addArguments("--headless");
             options.addArguments("--window-size=1920,1200");
             options.addArguments("--lang=en");
             driver = new ChromeDriver(options);
-            // driver.manage().window().maximize();
-
             driver.get(GetProperties.getProperties("config", "mainUrl"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         }
